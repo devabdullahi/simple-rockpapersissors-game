@@ -1,0 +1,23 @@
+def conv_f (celcius):
+    return celcius*(9/5)+32
+def conv_c (fahren):
+    return (fahren-32)/(9/5)
+
+print("select what do you want to convert to")
+print("1. celcius to fahrenheit")
+print("2. fahreheight to celcius")
+
+while True:
+    user_input =input("select an operation:  ")
+    if user_input not in ['1','2']:
+        print("select a valid number")
+        continue
+   
+    if user_input == '1':
+        celcius_input = float(input("please enter the temp in celcius:  "))
+        print ("the tempature is", conv_f(celcius_input), "F")
+    elif user_input == '2':
+        fahren_input = float(input("please enter temp in fahrenheiht:  "))
+        print ("the tempature is", conv_c(fahren_input), "C")
+
+    break
