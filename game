@@ -1,0 +1,43 @@
+import random
+
+while True:
+    score_board = 0
+    choices = ('rock','paper','sissors') 
+    computer_choice = random.choice(choices) 
+    class user:
+        print(choices)
+    try:
+        user_choice = str(input('what do you choose: '))
+    except ValueError:
+        print("please choose a value")
+    if user_choice not in choices:
+        print("please enter a valid value")
+        continue
+    if user_choice == computer_choice:
+        print (f"its a tie, computer selected {computer_choice}")
+    elif user_choice == 'rock':
+        if computer_choice == 'paper':
+            print(f"computer picked {computer_choice} , you lose")
+            score_board -=1
+        else:
+            print("you win")
+            score_board +=1
+    elif user_choice == 'paper':
+        if computer_choice == 'sissors':
+            print(f"computer picked {computer_choice}, you lose")
+            score_board -=1
+        else:
+            print('you win')
+            score_board +=1
+    elif user_choice == 'sissors':
+        if computer_choice == 'rock':
+            print(f"computer picked {computer_choice}, you lose")
+            score_board -=1
+        else:
+            print('you win')
+            score_board +=1
+    play_again = input("play again? (y/n)")
+    if play_again.lower() != 'y':
+        break
+
+print (f'final score is {score_board}')
